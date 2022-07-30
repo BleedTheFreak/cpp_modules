@@ -15,9 +15,13 @@ public:
   Fixed & operator=(const Fixed &f);
   int getRawBits() const;
   void setRawBits(int const raw);
+  float toFloat() const;
+  int toInt() const;
 private:
   int raw;
   static const int fraction;
 };
 
-#endif // !FIXE_CLASS
+std::ostream & operator << (std::ostream &out , const Fixed &f);
+
+#endif
