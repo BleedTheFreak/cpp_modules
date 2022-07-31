@@ -10,7 +10,7 @@ Fixed::~Fixed(){
 }
 
 Fixed::Fixed(const Fixed &f){
-  this->raw = f.raw;
+  *this = f;
   std::cout << "Copy constructor called" << std::endl;
 }
 
