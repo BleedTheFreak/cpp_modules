@@ -51,7 +51,7 @@ std::ostream & operator<< (std::ostream &out, const Fixed &f)
 }
 
 bool Fixed::operator<(const Fixed &f) const{
-  return (this->toFloat() < f.toFloat());
+  return (this->raw < f.raw);
 }
 
 bool Fixed::operator>(const Fixed &f) const{
@@ -96,6 +96,48 @@ Fixed Fixed::operator/(const Fixed &f) const{
   Fixed ret;
   ret.setRawBits((this->raw << fraction) / f.raw);
   return (ret);
+}
+
+Fixed & Fixed::operator++()
+{
+  raw += 1;
+  return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+  Fixed old = *this;
+  operator++();
+  return old;
+}
+
+Fixed & Fixed::operator--()
+{
+  raw -= 1;
+  return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+  Fixed old = *this;
+  operator++();
+  return old;
+}
+
+Fixed & Fixed::min(Fixed &f1, Fixed &f2){
+  return (f1 < f2) ? f1 : f2;
+}
+
+Fixed & Fixed::max(Fixed &f1, Fixed &f2){
+  return (f1 > f2) ? f1 : f2;
+}
+
+const Fixed & Fixed::min(const Fixed &f1, const Fixed &f2){
+  return (f1 < f2) ? f1 : f2;
+}
+
+const Fixed & Fixed::max(const Fixed &f1, const Fixed &f2){
+  return (f1 > f2) ? f1 : f2;
 }
 
 const int Fixed::fraction = 8;
