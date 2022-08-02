@@ -1,10 +1,10 @@
 #include "Point.hpp"
 #include "Fixed.hpp"
 
-Point::Point():x(Fixed(0)),y(Fixed(0)){
+Point::Point():x(0),y(0){
 }
 
-Point::Point(const float x , const float y):x(Fixed(x)),y(Fixed(y)){
+Point::Point(const float x , const float y):x(x),y(y){
 }
 
 Point::~Point(){
