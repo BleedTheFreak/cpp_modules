@@ -14,7 +14,7 @@ Name=a.out
 SRC=Fixed.cpp
 obj=$(SRC:%.cpp=%.o)
 
-all: $(Name)
+all: $(Name) ${SRC}
 
 $(Name): $(obj)
 	c++ ${obj} main.cpp -Wall -Wextra -Werror -std=c++98 -o ${Name} 
