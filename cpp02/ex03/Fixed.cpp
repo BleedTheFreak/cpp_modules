@@ -41,7 +41,7 @@ float Fixed::toFloat() const {
 
 int Fixed::toInt() const
 {
-  return (int)this->toFloat();
+  return (int)(raw / (int) (1 << fraction));
 }
 
 std::ostream & operator<< (std::ostream &out, const Fixed &f)
