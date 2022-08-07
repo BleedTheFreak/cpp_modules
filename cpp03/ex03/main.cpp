@@ -1,9 +1,9 @@
-#include "FragTrap.hpp"
+// #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main ()
 {  
-  FragTrap s = FragTrap("Yassine");
-  s.attack("hadak khona ly kaywadar l blue");
-  s.highFivesGuys();
+  DiamondTrap D = DiamondTrap("ansss");
+  D.whoAmI();
   return 0;
 }

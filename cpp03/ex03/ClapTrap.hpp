@@ -20,7 +20,7 @@ public:
   void setHitPoints(unsigned int amount);
   void setEnergyPoints(unsigned int amount);
   void setAttackDamage(unsigned int amount);
-  void setName(std::string name);
+  void setName(std::string _name);
   std::string getName() const;
 
 private:
