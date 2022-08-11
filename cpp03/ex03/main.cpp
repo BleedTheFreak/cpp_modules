@@ -5,5 +5,7 @@ int main ()
 {  
   DiamondTrap D = DiamondTrap("ansss");
   D.whoAmI();
+  D.attack("hello");
+  D.ClapTrap::attack("hello");
   return 0;
 }
