@@ -22,11 +22,10 @@ Character & Character::operator =(const Character &c){
 	// std::cout << "Character Copy assignment operator called" << std::endl;
 	if(this != &c)
 	{ 
+    this->name = c.name;
+    this->length = c.length;
     int i = 0;
-    while (i < length) {
-       // prevent leaks in assignment a = b both a and b exits
-      delete this->slot[i];
-      this->slot[i] = nullptr;
+    while (i < c.length) {
       if (c.slot[i] != nullptr)
         this->slot[i] = c.slot[i]->clone(); 
       else
@@ -42,7 +41,7 @@ std::string const & Character::getName() const {
 }
 
 void Character::equip(AMateria *m){
-  if (length >= 0 && length < 4){
+  if (length >= 0 && length < 4 && m != 0) {
     int i  = 0;
     while (i <= length) {
       if (this->slot[i] == nullptr)
@@ -64,12 +63,12 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-  if (idx < 4 && idx >= 0)
+  if (idx < 4 && idx >= 0 && slot[idx] != nullptr)
     slot[idx]->use(target); 
 }
 
 Character::Character(std::string _name):length(0){
-  name = _name;
+  this->name = _name;
   int i = 0;
   while (i < 4)
     this->slot[i++] = nullptr;
