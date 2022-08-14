@@ -32,6 +32,10 @@ const char *Form::GradeTooLowException::what() const throw(){
   return "Grade Too Low Exception";
 }
 
+const char *Form::FromNotSigned::what() const throw(){
+  return "Form Not Signed Exception";
+}
+
 std::ostream & operator << (std::ostream &out , const Form &f){
   out << "Form name : " << f.getName() << " ,grade to sign " << f.getGardeSig() 
     << " ,grade to excute " << f.getGardeExc() << " , it's "  << ((f.getSigned())

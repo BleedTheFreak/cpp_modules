@@ -9,7 +9,7 @@ class Form
 public:
 	Form();
 	Form(std::string,int,int);
-	~Form();
+	virtual ~Form();
 	Form(const Form &f);
 	Form & operator =(const Form &f);
   int getGardeExc() const;
@@ -17,12 +17,18 @@ public:
   std::string getName() const;
   bool getSigned() const;
   void beSigned(const Bureaucrat &);
+  virtual void  execute(Bureaucrat const & executor) const = 0;
   class GradeTooHighException : public std::exception
   {
     public:
         const char * what() const throw();
   };
   class GradeTooLowException : public std::exception
+  {
+    public:
+        const char * what() const throw();
+  };
+  class FromNotSigned : public std::exception
   {
     public:
         const char * what() const throw();

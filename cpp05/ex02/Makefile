@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 Name=Form
-SRC=Bureaucrat.cpp Form.cpp
+SRC=Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp
 obj=$(SRC:%.cpp=%.o)
 
 all: $(Name) ${SRC}
