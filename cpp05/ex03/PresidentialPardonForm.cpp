@@ -1,5 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 #include <fstream>
+
 PresidentialPardonForm::PresidentialPardonForm(){
 } 
 
@@ -16,7 +17,7 @@ PresidentialPardonForm & PresidentialPardonForm::operator =(const PresidentialPa
 	return *this;
 } 
 
-PresidentialPardonForm::PresidentialPardonForm(std::string _target):Form("Presidential pardon",25,5){
+PresidentialPardonForm::PresidentialPardonForm(std::string _target):Form("presidential pardon",25,5){
   target = _target;
 }
 
@@ -37,4 +38,12 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const {
   }
   else
       throw Form::FromNotSigned();
+}
+
+Form * PresidentialPardonForm::getCopy(std::string target){
+  return new PresidentialPardonForm(target);
+}
+
+std::string PresidentialPardonForm::getTarget() const {
+  return target;
 }

@@ -1,5 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "Form.hpp"
+
 RobotomyRequestForm::RobotomyRequestForm(){
 } 
 
@@ -16,7 +17,7 @@ RobotomyRequestForm & RobotomyRequestForm::operator =(const RobotomyRequestForm 
 	return *this;
 } 
 
-RobotomyRequestForm::RobotomyRequestForm(std::string _target):Form("Robotomy request",72,45){
+RobotomyRequestForm::RobotomyRequestForm(std::string _target):Form("robotomy request",72,45){
   target = _target;
 }
 
@@ -33,4 +34,14 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
   }
   else
       throw Form::FromNotSigned();
+}
+
+Form *RobotomyRequestForm::getCopy(std::string target)
+{
+  return new RobotomyRequestForm(target);
+}
+
+
+std::string RobotomyRequestForm::getTarget() const {
+  return target;
 }

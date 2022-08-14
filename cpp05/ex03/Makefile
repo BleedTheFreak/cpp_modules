@@ -10,8 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-Name=Form
-SRC=Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp  PresidentialPardonForm.cpp
+Name=Intern
+SRC=Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp  PresidentialPardonForm.cpp Intern.cpp
 obj=$(SRC:%.cpp=%.o)
 
 all: $(Name) ${SRC}
