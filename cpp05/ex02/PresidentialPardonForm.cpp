@@ -19,7 +19,7 @@ PresidentialPardonForm & PresidentialPardonForm::operator =(const PresidentialPa
 	return *this;
 } 
 
-PresidentialPardonForm::PresidentialPardonForm(std::string _target):Form("Pardon Form",72,45){
+PresidentialPardonForm::PresidentialPardonForm(std::string _target):Form("Presidential pardon",25,5){
   target = _target;
 }
 
@@ -28,11 +28,15 @@ void PresidentialPardonForm::execute(const Bureaucrat &executor) const {
   {
     if (getGardeExc() >= executor.getGarde())
     {
-      std::cout << target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+      std::cout << "fzzzzzzzzzzz" << std::endl;
+      std::cout << target << " hase been robotomized successfully 50% if the time" << std::endl;
       executor.executeForm(*this);
     }
     else
+    {
+      std::cout << "the robotomized failed" << std::endl;
       throw Form::GradeTooLowException();
+    }
   }
   else
       throw Form::FromNotSigned();

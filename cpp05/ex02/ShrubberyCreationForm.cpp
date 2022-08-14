@@ -17,7 +17,7 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator =(const ShrubberyCreatio
 	return *this;
 } 
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string _target):Form("Shrubbery Form",145,137){
+ShrubberyCreationForm::ShrubberyCreationForm(std::string _target):Form("Shrubbery creation",145,137){
   target = _target;
 }
 
