@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:22:26 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 16:24:06 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -8,16 +20,12 @@ int main ()
 {
   try {
     Bureaucrat b = Bureaucrat("Yassine");
-    b.setGrade(30);
-    // Form *f = new ShrubberyCreationForm("hello");
-    Form *x = new PresidentialPardonForm("hello");
-    // Form *c = new RobotomyRequestForm("hello");
-    std::cout << *x << std::endl;
-    // f->beSigned(b);
-    // std::cout << *f << std::endl;
-    // x->execute(b);
-  }catch(Form::GradeTooLowException &e){
-    std::cout << e.what()  << std::endl;
+    b.setGrade(1);
+    // Form *x = new PresidentialPardonForm("hello");
+    Form *x = new RobotomyRequestForm("hello");
+    // Form *x = new ShrubberyCreationForm("hello");
+    x->beSigned(b);
+    b.executeForm(*x);
   }catch(Form::FromNotSigned &e){
     std::cout << e.what()  << std::endl;
   }

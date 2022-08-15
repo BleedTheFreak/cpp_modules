@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:22:22 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 18:23:03 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FORM_CLASS
 #define FORM_CLASS
 
@@ -18,7 +30,6 @@ public:
   bool getSigned() const;
   void beSigned(const Bureaucrat &);
   virtual void  execute(Bureaucrat const & executor) const = 0;
-  virtual Form *getCopy(std::string target) = 0;
   virtual std::string getTarget() const = 0;
   class GradeTooHighException : public std::exception
   {

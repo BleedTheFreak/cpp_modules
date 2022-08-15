@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:22:15 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 16:22:16 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_CLASS
 #define BUREAUCRAT_CLASS
 
@@ -19,7 +31,7 @@ public:
   void increment();
   void decrement();
   void signForm(const Form &) const;
-  void executeForm(Form const &form) const;
+  void executeForm(Form const &form);
   class GradeTooHighException : public std::exception
   {
     public:

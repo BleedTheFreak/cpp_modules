@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:23:25 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 18:14:40 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef INTERN_CLASS
 #define INTERN_CLASS
 
@@ -13,7 +25,6 @@ public:
 	Intern & operator =(const Intern &i);
   Form * makeForm(std::string,std::string);
 private: 
-  Form *InternForms[3];
 }; 
 
 #endif // !INTERN_CLASS 

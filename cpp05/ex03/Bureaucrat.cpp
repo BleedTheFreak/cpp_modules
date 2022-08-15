@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:22:12 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 16:22:13 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <exception>
 
 Bureaucrat::Bureaucrat(){
 } 
@@ -70,6 +83,13 @@ void Bureaucrat::signForm(const Form &f) const{
       << f.getName() << " because the form grade higher then of the bureaucrat" << std::endl;
 }
 
-void Bureaucrat::executeForm(const Form &form) const{
-  std::cout << getName() << " executed " << form.getName() << std::endl;
+void Bureaucrat::executeForm(const Form &form){
+  try {
+    form.execute(*this);
+    std::cout << getName() << " executed " << form.getName() << std::endl;
+  }
+  catch(std::exception &e)
+  {
+      std::cout << e.what() << std::endl;
+  }
 }

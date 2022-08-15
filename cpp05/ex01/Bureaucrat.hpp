@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:21:58 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 16:21:59 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_CLASS
 #define BUREAUCRAT_CLASS
 
@@ -9,13 +21,12 @@ class Bureaucrat
 {
 public:
 	Bureaucrat();
-  Bureaucrat(std::string);
+  Bureaucrat(std::string _name, int grade);
 	~Bureaucrat();
 	Bureaucrat(const Bureaucrat &b);
 	Bureaucrat & operator =(const Bureaucrat &b);
   int getGarde() const;
   std::string getName() const;
-  void setGrade(int _grade);
   void increment();
   void decrement();
   void signForm(const Form &) const;

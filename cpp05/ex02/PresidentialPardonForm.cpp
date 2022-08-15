@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:22:31 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 16:22:32 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PresidentialPardonForm.hpp"
 #include <fstream>
+
 PresidentialPardonForm::PresidentialPardonForm(){
 } 
 
@@ -20,20 +33,13 @@ PresidentialPardonForm::PresidentialPardonForm(std::string _target):Form("Presid
   target = _target;
 }
 
-void PresidentialPardonForm::execute(const Bureaucrat &executor) const {
+void PresidentialPardonForm::execute(Bureaucrat const &executor) const {
   if (getSigned())
   {
     if (getGardeExc() >= executor.getGarde())
-    {
-      std::cout << "fzzzzzzzzzzz" << std::endl;
-      std::cout << target << " hase been robotomized successfully 50% if the time" << std::endl;
-      executor.executeForm(*this);
-    }
+      std::cout << target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
     else
-    {
-      std::cout << "the robotomized failed" << std::endl;
       throw Form::GradeTooLowException();
-    }
   }
   else
       throw Form::FromNotSigned();

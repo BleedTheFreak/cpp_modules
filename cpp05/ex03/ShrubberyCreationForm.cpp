@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:22:40 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 18:27:32 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
@@ -42,18 +54,12 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
         file << "     _\\/ ._\\//_/__/  ,\\_//__\\ /.  \\_//__/_" << std::endl;
       }
       file.close();
-      executor.executeForm(*this);
     }
     else
       throw Form::GradeTooLowException();
   }
   else
       throw Form::FromNotSigned();
-}
-
-Form * ShrubberyCreationForm::getCopy(std::string target)
-{
-  return new ShrubberyCreationForm(target);
 }
 
 std::string ShrubberyCreationForm::getTarget() const {

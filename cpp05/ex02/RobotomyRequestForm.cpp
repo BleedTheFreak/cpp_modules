@@ -1,5 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:22:35 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 21:34:21 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "RobotomyRequestForm.hpp"
 #include "Form.hpp"
+
 RobotomyRequestForm::RobotomyRequestForm(){
 } 
 
@@ -25,8 +38,14 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
   {
     if (getGardeExc() >= executor.getGarde())
     {
-      std::cout << target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
-      executor.executeForm(*this);
+      srand(time(NULL));
+      if ((rand()  % 100) % 2 == 0)
+      {
+        std::cout << "fzzzzzzzzzzz" << std::endl;
+        std::cout << target << " hase been robotomized successfully 50% of the time." << std::endl;
+      }
+      else
+        std::cout << "the robotomized failed" << std::endl;
     }
     else
       throw Form::GradeTooLowException();

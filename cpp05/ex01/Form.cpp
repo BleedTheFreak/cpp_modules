@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:22:00 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 21:26:15 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 
 Form::Form(std::string _name,int _gradeSig,int _gradeEx) : name(_name),gradeSig(_gradeSig),gradeExc(_gradeEx){
@@ -8,7 +20,7 @@ Form::Form(std::string _name,int _gradeSig,int _gradeEx) : name(_name),gradeSig(
   this->_signed = false;
 }
 
-Form::Form():name(),gradeSig(),gradeExc(){
+Form::Form():name(),gradeSig(),gradeExc(),_signed(false){
 } 
 
 Form::~Form(){

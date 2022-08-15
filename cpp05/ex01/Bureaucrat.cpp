@@ -1,18 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ytaya <ytaya@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 16:21:56 by ytaya             #+#    #+#             */
+/*   Updated: 2022/08/15 21:29:06 by ytaya            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
 Bureaucrat::Bureaucrat(){
 } 
 
-Bureaucrat::Bureaucrat(std::string _name):name(_name){
-} 
 
 Bureaucrat::~Bureaucrat(){
 } 
 
-Bureaucrat::Bureaucrat(const Bureaucrat &b):name(b.name){
-	 *this = b;
-}
+Bureaucrat::Bureaucrat(std::string _name , int _grade):name(_name),grade(_grade){
+    if (_grade < 1)
+    throw Bureaucrat::GradeTooHighException();
+  else if (_grade > 150)
+    throw Bureaucrat::GradeTooLowException();
+} 
 
 Bureaucrat & Bureaucrat::operator =(const Bureaucrat &b){
 	if(this != &b)
@@ -26,14 +39,6 @@ int Bureaucrat::getGarde() const{
 
 std::string Bureaucrat::getName() const{
   return name;
-}
-
-void Bureaucrat::setGrade(int _grade){
-  if (_grade < 1)
-    throw Bureaucrat::GradeTooHighException();
-  else if (_grade > 150)
-    throw Bureaucrat::GradeTooLowException();
-  this->grade = _grade;
 }
 
 void Bureaucrat::increment(){
