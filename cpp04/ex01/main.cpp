@@ -13,17 +13,20 @@ int main()
   // Animal A;
   // A.makeSound();
 
-  Animal *Array[4];
-  for (int i = 0; i < 4 ;i++)
-    if (i < 2)
-      Array[i] = new Dog();
-    else
-      Array[i] = new Cat();
-  for (int i = 0; i < 4 ;i++)
-  {
-    Array[i]->makeSound();
-    delete Array[i];
-  }
+  // Animal *Array[4];
+  // for (int i = 0; i < 4 ;i++)
+  //   if (i < 2)
+  //     Array[i] = new Dog();
+  //   else
+  //     Array[i] = new Cat();
+  // for (int i = 0; i < 4 ;i++)
+  // {
+  //   Array[i]->makeSound();
+  //   delete Array[i];
+  // }
+  Cat c;
+  Cat c1;
+  c = c1;
   // while(1);
   return 0;
 }

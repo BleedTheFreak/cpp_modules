@@ -26,10 +26,10 @@ Character & Character::operator =(const Character &c){
     this->length = c.length;
     int i = 0;
     while (i < c.length) {
-      if (c.slot[i] != nullptr)
-        this->slot[i] = c.slot[i]->clone(); 
-      else
-        this->slot[i] = nullptr;
+      // if (c.slot[i] != nullptr)
+        this->slot[i] = c.slot[i]; 
+      // else
+        // this->slot[i] = nullptr;
       i++;
     }
 	} 
