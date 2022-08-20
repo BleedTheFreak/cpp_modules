@@ -22,8 +22,8 @@ int main ()
     Bureaucrat b = Bureaucrat("Yassine");
     b.setGrade(1);
     // Form *x = new PresidentialPardonForm("hello");
-    Form *x = new RobotomyRequestForm("hello");
-    // Form *x = new ShrubberyCreationForm("hello");
+    // Form *x = new RobotomyRequestForm("hello");
+    Form *x = new ShrubberyCreationForm("hello");
     x->beSigned(b);
     b.executeForm(*x);
   }catch(Form::FromNotSigned &e){
