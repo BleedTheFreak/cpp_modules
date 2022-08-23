@@ -62,7 +62,7 @@ int Span::shortestSpan() {
 
 void Span::rangeOfIterators(std::vector<int>::iterator begin, std::vector<int>::iterator end ,int n)
 {
-    for (std::vector<int>::iterator it = begin ; arr.capacity() && it != end ; it++)
+    for (std::vector<int>::iterator it = begin ;arr.capacity() && it != end ; it++)
       arr.insert(it,n++);
 }
 
